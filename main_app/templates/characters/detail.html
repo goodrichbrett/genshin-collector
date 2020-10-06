@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Character Details</h1>
+
+<div class="card">
+	<div class="card-content">
+		<span class="card-title">{{ character.name }}</span>
+		<p>Gender: {{ character.gender }}</p>
+		<p>Element: {{ character.element }}</p>
+		<p>Description: {{ character.description }}</p>
+	</div>
+</div>
+
+{% endblock %}
