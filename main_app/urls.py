@@ -12,5 +12,7 @@ urlpatterns = [
     path('characters/<int:pk>/update/',
          views.CharacterUpdate.as_view(), name='character_update'),
     path('characters/<int:pk>/delete/',
-         views.CharacterDelete.as_view(), name='character_delete')
+         views.CharacterDelete.as_view(), name='character_delete'),
+    path('characters/<int:character_id>/add_leveling/',
+         views.add_leveling, name='add_leveling')
 ]
