@@ -9,11 +9,23 @@ EXPERIENCE = (
 
 
 # Create your models here.
+class Weapon(models.Model):
+    name = models.CharField(max_length=50)
+    type = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("weapons_detail", kwargs={"pk": self.id})
+
+
 class Character(models.Model):
     name = models.CharField(max_length=100)
     gender = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
     element = models.CharField(max_length=100)
+    weapons = models.ManyToManyField(Weapon)
 
     def __str__(self):
         return self.name
