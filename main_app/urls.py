@@ -7,7 +7,7 @@ urlpatterns = [
     path('characters/', views.characters_index, name='index'),
     path('characters/<int:character_id>/',
          views.character_detail, name='detail'),
-    path('characters/create', views.CharacterCreate.as_view(),
+    path('characters/create/', views.CharacterCreate.as_view(),
          name='character_create'),
     path('characters/<int:pk>/update/',
          views.CharacterUpdate.as_view(), name='character_update'),
@@ -23,5 +23,6 @@ urlpatterns = [
     path('weapons/<int:pk>/delete',
          views.WeaponDelete.as_view(), name='weapons_delete'),
     path('characters/<int:character_id>/assoc_weapon/<int:weapon_id>/',
-         views.assoc_weapon, name='assoc_weapon')
+         views.assoc_weapon, name='assoc_weapon'),
+    path('accounts/signup/', views.signup, name='signup')
 ]
